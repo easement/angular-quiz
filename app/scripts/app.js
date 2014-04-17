@@ -13,7 +13,7 @@ angular
   }])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/quiz/:id', {
+      .when('/quiz/:questionId?', {
         templateUrl: 'views/quiz.html',
         controller: 'QuizCtrl'
       })

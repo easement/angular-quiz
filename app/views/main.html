@@ -1,11 +1,4 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">Hackathon 2014</h3>
-</div>
+<div ng-include src="'/partials/header.html'"></div>
 
 <div class="jumbotron" ng-controller="MainCtrl">
   <h1>When the DUVs Cry</h1>
@@ -14,7 +7,7 @@
   </p>
 
   <input text ng-model="user" ng-change="updateUser()" placeholder="name" />
-  <p><a class="btn btn-lg btn-success" ng-href="#/quiz/1">HELL YES! <span class="glyphicon glyphicon-ok"></span></a></p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/quiz">HELL YES! <span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
