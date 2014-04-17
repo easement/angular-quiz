@@ -1,0 +1,26 @@
+<div ng-include src="'/partials/header.html'"></div>
+
+<div class="jumbotron" ng-controller="QuizCtrl">
+
+  <div id="myprogress" class="progress">
+    <div class="bar bar-info" role="progressbar" aria-valuetransitiongoal="{{getPercentage()}}" aria-valuenow="{{getPercentage()}}"></div>
+  </div>
+
+
+  <form>
+    <h1>Quiz Question </h1>
+    <p class="lead">
+      {{questions[questionId].term}}
+    </p>
+
+    <ol type="A">
+        <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer"/>{{answer}}</li>
+    </ol>
+    <p><a class="btn btn-lg btn-success" ng-click="next()">Submit</a></p>
+  </form>
+</div>
+
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Definition Dudes</p>
+</div>
