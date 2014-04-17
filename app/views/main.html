@@ -4,33 +4,26 @@
     <li><a ng-href="#">About</a></li>
     <li><a ng-href="#">Contact</a></li>
   </ul>
-  <h3 class="text-muted">duvs_cry</h3>
+  <h3 class="text-muted">Hackathon 2014</h3>
 </div>
 
-<div class="jumbotron">
-  <h1>Hey!</h1>
+<div class="jumbotron" ng-controller="MainCtrl">
+  <h1>When the DUVs Cry</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    Are you Ready to dominate the Glossary
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+
+  <input text ng-model="user" ng-change="updateUser()" placeholder="name" />
+  <p><a class="btn btn-lg btn-success" ng-href="#/quiz/1">HELL YES! <span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>Why?</h4>
+  <p>Lorem Ipsum</p>
+  <p>Lorem Ipsum</p>
+  <p>Lorem Ipsum</p>
 </div>
 
 <div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+  <p><span class="glyphicon glyphicon-heart"></span> from the Definition Dudes</p>
 </div>
