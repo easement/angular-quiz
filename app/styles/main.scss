@@ -61,11 +61,14 @@ form .lead {
 }
 
 form ol {
-    text-align: left;
-    margin-left: 151px;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 16px;
     padding-bottom: 20px;
     font-size: 18px;
 }
+
+form ol li { margin-bottom: 12px; }
 
 form .submit { margin: 0; }
 
@@ -107,14 +110,33 @@ form .submit { margin: 0; }
     text-align: center;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0 17px 0;
+.jumbotron .stats-row      { font-size: 18px;   }
+.jumbotron .stats-row span { font-weight: bold; }
+
+.jumbotron .answerKey                   { margin-bottom: 10px;                      }
+.jumbotron .answerKey .score-term       { font-weight: bold;                        }
+.jumbotron .answerKey div               { padding-left: 0;     text-align: justify; }
+.jumbotron .answerKey .glyphicon-remove { color: red;          font-size: 18px;     }
+.jumbotron .answerKey .glyphicon-ok     { color: green;        font-size: 18px;     }
+
+.jumbotron .answerKey .hand { 
+    color:      orange; 
+    font-size:  18px; 
+    text-align: right; 
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+.jumbotron .answerKey .correct-answer-col { color: green; }
+
+.jumbotron .answerKey .incorrect-answer { 
+    color:      red;   
+    font-style: italic; 
 }
+
+.jumbotron .score-btns { margin-top: 30px; }
+
+.jumbotron .term-line      { text-align: left; margin-bottom: 10px; }
+.jumbotron .term-line span { font-weight: bold;                     }
+.jumbotron .gloassary-btn  { margin-top: 30px;                      }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
