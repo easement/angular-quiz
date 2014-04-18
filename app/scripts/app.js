@@ -17,6 +17,10 @@ angular
         templateUrl: 'views/quiz.html',
         controller: 'QuizCtrl'
       })
+      .when('/score', {
+        templateUrl: 'views/score.html',
+        controller: 'ScoreCtrl'
+      })
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
