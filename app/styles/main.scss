@@ -61,7 +61,7 @@ form .lead {
 }
 
 form ol {
-    text-align: left;
+    text-align: justify;
     margin-left: 10px;
     margin-right: 16px;
     padding-bottom: 20px;
@@ -134,14 +134,9 @@ form .submit { margin: 0; }
 
 .jumbotron .score-btns { margin-top: 30px; }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0 17px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
+.jumbotron .term-line     { text-align: left; margin-bottom: 10px; }
+.jumbotron span           { font-weight: bold;                     }
+.jumbotron .gloassary-btn { margin-top: 30px;                      }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
