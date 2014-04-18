@@ -36,9 +36,32 @@ body {
 .header h3 {
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 40px;
+    line-height: 46px;
     padding-bottom: 19px;
 }
+
+.header .tapjoy { 
+    color: red; 
+    font-style: italic;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+form .lead {
+    font-size: 58px;
+    padding-top: 14px;
+    border-top: solid 1px gainsboro;
+    margin-bottom: 8px;
+}
+
+form ol {
+    text-align: left;
+    margin-left: 151px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+form .submit { margin: 0; }
 
 /* Custom page footer */
 .footer {
@@ -55,6 +78,8 @@ body {
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
+    padding-top: 14px;
+    padding-bottom: 35px;
 }
 
 .jumbotron .btn {
@@ -62,9 +87,22 @@ body {
     padding: 14px 24px;
 }
 
+.jumbotron .hell-yes {
+    margin-top: 31px;
+}
+
+.jumbotron .subtitle {
+    margin-bottom: 33px;
+}
+
+.jumbotron input.email {
+    width: 222px;
+    text-align: center;
+}
+
 /* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
+    margin: 40px 0 17px 0;
 }
 
 .marketing p + h4 {
