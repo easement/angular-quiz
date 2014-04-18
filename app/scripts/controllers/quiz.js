@@ -17,9 +17,16 @@ angular.module('duvsCryApp')
     $scope.next = function (){
       $scope.logAnswer();
       // Todo out of bounds
-      $scope.questionId++;
-      $scope.currentAnswer = '';
-      jQuery('.progress-bar').progressbar({display_text: 'fill'}); //WOULD PREFER 'center' BUT APPEARS TO BE BROKEN
+      var nextQuestion = $scope.questionId + 1;
+
+      if (nextQuestion < $scope.questions.length) {
+        $scope.questionId = nextQuestion;
+        $scope.currentAnswer = '';
+        jQuery('.progress-bar').progressbar({display_text: 'fill'}); //WOULD PREFER 'center' BUT APPEARS TO BE BROKEN
+      } else {
+        console.log('go to scoring page');
+        $location.path('/score');
+      }
     };
 
     $scope.getPercentage = function () {
