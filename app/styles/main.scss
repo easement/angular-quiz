@@ -62,10 +62,13 @@ form .lead {
 
 form ol {
     text-align: left;
-    margin-left: 151px;
+    margin-left: 10px;
+    margin-right: 16px;
     padding-bottom: 20px;
     font-size: 18px;
 }
+
+form ol li { margin-bottom: 12px; }
 
 form .submit { margin: 0; }
 
@@ -106,6 +109,30 @@ form .submit { margin: 0; }
     width: 222px;
     text-align: center;
 }
+
+.jumbotron .stats-row      { font-size: 18px;   }
+.jumbotron .stats-row span { font-weight: bold; }
+
+.jumbotron .answerKey                   { margin-bottom: 10px;                      }
+.jumbotron .answerKey .score-term       { font-weight: bold;                        }
+.jumbotron .answerKey div               { padding-left: 0;     text-align: justify; }
+.jumbotron .answerKey .glyphicon-remove { color: red;          font-size: 18px;     }
+.jumbotron .answerKey .glyphicon-ok     { color: green;        font-size: 18px;     }
+
+.jumbotron .answerKey .hand { 
+    color:      orange; 
+    font-size:  18px; 
+    text-align: right; 
+}
+
+.jumbotron .answerKey .correct-answer-col { color: green; }
+
+.jumbotron .answerKey .incorrect-answer   { 
+    color:      red;   
+    font-style: italic; 
+}
+
+.jumbotron .score-btns { margin-top: 30px; }
 
 /* Supporting marketing content */
 .marketing {

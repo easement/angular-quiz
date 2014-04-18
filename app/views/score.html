@@ -3,10 +3,10 @@
 <div class="jumbotron container" ng-controller="ScoreCtrl">
   <h1>{{user}}'s Results</h1>
   <div class="container">
-      <div class="row">
-          <div class="col-md-4">Current {{results.percentage}}%</div>
-          <div class="col-md-4">Previous:  {{previousScore ? previousScore + '%' : 'N/A' }}</div>
-          <div class="col-md-4">All Time High:  {{highScore ? highScore + '%' : 'N/A' }}</div>
+      <div class="row stats-row">
+          <div class="col-md-4"><span>Current:</span> {{results.percentage}}%</div>
+          <div class="col-md-4"><span>Previous:</span>  {{previousScore ? previousScore + '%' : 'N/A' }}</div>
+          <div class="col-md-4"><span>All Time High:</span>  {{highScore ? highScore + '%' : 'N/A' }}</div>
       </div>
   </div>
   <p class="subtitle">
@@ -19,7 +19,7 @@
       <span class="glyphicon {{answer.correct ? 'glyphicon-ok' : 'glyphicon-remove'}}"></span>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2 score-term">
        {{answer.term}}
     </div>
 
@@ -27,15 +27,18 @@
         <span class="{{answer.correct ? 'correct-answer' : 'incorrect-answer'}}">{{answer.userAnswer || 'skipped'}}</span>
     </div>
 
-    <div class="col-md-4">
-        <span class="{{answer.correct ? '' : 'glyphicon glyphicon-hand-right'}}"></span>
-        {{answer.correct ? '' : answer.correctAnswer }}
+    <div class="col-md-1 hand">
+      <span class="{{answer.correct ? '' : 'glyphicon glyphicon-hand-right'}}"></span>
     </div>
 
+    <div class="col-md-4 correct-answer-col">
+      {{answer.correct ? '' : answer.correctAnswer }}
+    </div>
   </div>
 
-  <div><button ng-click="showDictionary()" class="btn btn-lg btn-info">Study Up <span class="glyphicon glyphicon-ok"></span></button>
-      <button ng-click="prepareQuizForRetake()" class="btn btn-lg btn-success">Play Again <span class="glyphicon glyphicon-ok"></span></button>
+  <div class="score-btns">
+    <button ng-click="showDictionary()" class="btn btn-lg btn-info"><span class="glyphicon glyphicon glyphicon-list-alt"></span> Study Up</button>
+    <button ng-click="prepareQuizForRetake()" class="btn btn-lg btn-success">Play Again <span class="glyphicon glyphicon-ok"></span></button>
   </div>
 </div>
 
