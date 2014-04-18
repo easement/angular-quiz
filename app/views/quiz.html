@@ -13,9 +13,10 @@
     </p>
 
     <ol type="A">
-        <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer"/> {{answer}}</li>
+        <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer"> {{answer}}</li>
     </ol>
-    <p class="submit"><a class="btn btn-lg btn-primary" ng-click="next()">Submit</a></p>
+    <!-- ng-disabled="currentAnswer.length == 0" -->
+    <p class="submit"><button class="btn btn-lg btn-primary" ng-click="next()" ng-disabled="false">Submit</button></p>
   </form>
 </div>
 

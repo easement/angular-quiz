@@ -3,6 +3,7 @@
 
 angular.module('duvsCryApp')
   .controller('QuizCtrl', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
+    $scope.navPage =  'quiz';
 
     // Set up everything
     $scope.bootstrap = function() {
@@ -23,9 +24,9 @@ angular.module('duvsCryApp')
       if (nextQuestion < $scope.questions.length) {
         $scope.questionId    = nextQuestion;
         $scope.currentAnswer = '';
-        jQuery('.progress-bar').progressbar({display_text: 'fill'}); //WOULD PREFER 'center' BUT APPEARS TO BE BROKEN
+        jQuery('.progress-bar').progressbar({display_text: 'fill'});
+        jQuery('.submit button.btn').blur();
       } else {
-        console.log('go to scoring page');
         $location.path('/score');
       }
     };
