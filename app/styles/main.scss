@@ -87,9 +87,22 @@ form .submit { margin: 0; }
     padding: 14px 24px;
 }
 
+.jumbotron .hell-yes {
+    margin-top: 31px;
+}
+
+.jumbotron .subtitle {
+    margin-bottom: 33px;
+}
+
+.jumbotron input.email {
+    width: 222px;
+    text-align: center;
+}
+
 /* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
+    margin: 40px 0 17px 0;
 }
 
 .marketing p + h4 {
