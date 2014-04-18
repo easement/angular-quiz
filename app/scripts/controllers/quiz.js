@@ -10,24 +10,19 @@ angular.module('duvsCryApp')
       $scope.questionId = $routeParams.questionId || 0;
       $scope.userAnswers = [];
       $scope.currentAnswer = '';
-      $scope.progressPercent = 0;
-      jQuery('.bar').progressbar();
     };
-    $scope.bootstrap();
 
+    $scope.bootstrap();
 
     $scope.next = function (){
       $scope.logAnswer();
       // Todo out of bounds
       $scope.questionId++;
       $scope.currentAnswer = '';
-      jQuery('#myprogress .bar').animate({width: $scope.getPercentage() + '%' });
+      jQuery('.progress-bar').progressbar({display_text: 'fill'}); //WOULD PREFER 'center' BUT APPEARS TO BE BROKEN
     };
 
     $scope.getPercentage = function () {
-      console.log($scope.questionId + 1);
-      console.log($scope.questions.length);
-      console.log(((($scope.questionId + 1) / $scope.questions.length) * 100).toFixed(2));
       return ((($scope.questionId + 1) / $scope.questions.length) * 100).toFixed(2);
     };
 
