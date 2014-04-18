@@ -7,15 +7,15 @@
   </div>
 
   <form>
-    <h1>Quiz Question </h1>
+    <h2>Quiz Question</h2>
     <p class="lead">
       {{questions[questionId].term}}
     </p>
 
     <ol type="A">
-        <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer"/>{{answer}}</li>
+        <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer"/> {{answer}}</li>
     </ol>
-    <p><a class="btn btn-lg btn-success" ng-click="next()">Submit</a></p>
+    <p class="submit"><a class="btn btn-lg btn-primary" ng-click="next()">Submit</a></p>
   </form>
 </div>
 
