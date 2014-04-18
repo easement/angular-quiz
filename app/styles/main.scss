@@ -127,16 +127,16 @@ form .submit { margin: 0; }
 
 .jumbotron .answerKey .correct-answer-col { color: green; }
 
-.jumbotron .answerKey .incorrect-answer   { 
+.jumbotron .answerKey .incorrect-answer { 
     color:      red;   
     font-style: italic; 
 }
 
 .jumbotron .score-btns { margin-top: 30px; }
 
-.jumbotron .term-line     { text-align: left; margin-bottom: 10px; }
-.jumbotron span           { font-weight: bold;                     }
-.jumbotron .gloassary-btn { margin-top: 30px;                      }
+.jumbotron .term-line      { text-align: left; margin-bottom: 10px; }
+.jumbotron .term-line span { font-weight: bold;                     }
+.jumbotron .gloassary-btn  { margin-top: 30px;                      }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
