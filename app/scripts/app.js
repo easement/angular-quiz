@@ -17,9 +17,17 @@ angular
         templateUrl: 'views/quiz.html',
         controller: 'QuizCtrl'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
       .when('/score', {
         templateUrl: 'views/score.html',
         controller: 'ScoreCtrl'
+      })
+      .when('/dictionary', {
+        templateUrl: 'views/dictionary.html',
+        controller: 'DictionaryCtrl'
       })
       .when('/', {
         templateUrl: 'views/main.html',
