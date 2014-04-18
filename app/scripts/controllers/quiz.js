@@ -8,7 +8,7 @@ angular.module('duvsCryApp')
     $scope.bootstrap = function() {
       $scope.user = localStorageService.get('email') ||  '';
       $scope.questionId = $routeParams.questionId || 0;
-      $scope.userAnswers = [];
+      $scope.userAnswers = localStorageService.get('userAnswers') || [];
       $scope.currentAnswer = '';
     };
 
@@ -27,9 +27,8 @@ angular.module('duvsCryApp')
     };
 
     $scope.logAnswer = function() {
-      console.log ($scope.currentAnswer);
-      //TODO - serialze / deserialize object
-      localStorageService.set('question' + $scope.questionId, $scope.currentAnswer);
+      $scope.userAnswers[$scope.questionId] = $scope.currentAnswer;
+      localStorageService.set('userAnswers', JSON.stringify($scope.userAnswers));
     };
 
     $scope.questions = [
@@ -415,5 +414,59 @@ angular.module('duvsCryApp')
       }
     ]
 
+
+    /////////////////////////
+    // SCORING METHODS
+    /////////////////////////
+
+    // Grab the values from the questions key
+    $scope.getAnswerKey = function () {
+      return _.pluck($scope.questions, 'answer');
+    };
+
+    // Length the same
+    $scope.allAnswered = function() {
+      return $scope.getAnswerKey().length == localStorageService.get('userAnswers').length
+    };
+
+    console.log('allAnswered');
+    console.log($scope.allAnswered());
+
+    $scope.gradeQuiz = function() {
+      var answerKey;
+      var userAnswers;
+      if (!$scope.allAnswered()) {
+        console.log ("ERRROR");
+        console.log ("only " + localStorageService.get('userAnswers').length + ' anserwed');
+      } else {
+        $scope.graded = [];
+        answerKey = $scope.getAnswerKey();
+        userAnswers = $scope.userAnswers;
+        _.each(answerKey, function(value, index) {
+            console.log ("key: " + answerKey[index] + " user: " + userAnswers[index]);
+            $scope.graded[index] = (answerKey[index] == userAnswers[index]);
+        });
+      }
+
+      //console.log('graded');
+      //console.log($scope.graded);
+      return $scope.graded
+    };
+    $scope.gradeQuiz();
+
+
+    $scope.generateStatsBasedOnGradedQuiz = function() {
+      var results  = $scope.gradeQuiz();
+      // Could subtract from total, but this reads nicer.
+      var numRight = _.reject(results, function(correct) { return !correct;}).length;
+      var numWrong = _.reject(results, function(correct) { return correct;}).length;
+      var total    = results.length;
+      var percent  = parseInt((numRight/ (total)) * 100);
+
+      $scope.stats = {right: numRight, wrong: numWrong, total: total, percent: percent}
+      return $scope.stats;
+    };
+    console.log('PERCENTAGE');
+    console.log($scope.generateStatsBasedOnGradedQuiz());
 
   });
