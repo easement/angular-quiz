@@ -2,7 +2,7 @@
 
 
 angular.module('duvsCryApp')
-  .controller('MainCtrl', function ($scope, localStorageService, $location) {
+  .controller('MainCtrl', ['$scope', 'localStorageService', '$location', function ($scope, localStorageService, $location) {
     $scope.navPage =  'root';
 
     $scope.user = localStorageService.get('email') ||  '';
@@ -15,4 +15,4 @@ angular.module('duvsCryApp')
       $location.path('/quiz');
     };
 
-  });
+  }]);

@@ -2,7 +2,7 @@
 
 
 angular.module('duvsCryApp')
-  .controller('AboutCtrl', function ($scope, localStorageService, $location) {
+  .controller('AboutCtrl', ['$scope', 'localStorageService', '$location', function ($scope, localStorageService, $location) {
     $scope.navPage =  'about';
 
     $scope.takeQuiz = function() {
@@ -10,4 +10,4 @@ angular.module('duvsCryApp')
       $location.path('/quiz');
     };
 
-});
+}]);
