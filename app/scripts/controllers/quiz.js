@@ -2,7 +2,7 @@
 
 
 angular.module('duvsCryApp')
-  .controller('QuizCtrl', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
+  .controller('QuizCtrl', ['$scope', 'localStorageService', '$routeParams', '$route', '$location', 'QuizQuestions', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
     $scope.navPage =  'quiz';
 
     // Set up everything
@@ -40,4 +40,4 @@ angular.module('duvsCryApp')
       localStorageService.set('userAnswers', JSON.stringify($scope.userAnswers));
     };
 
-  });
+  }]);

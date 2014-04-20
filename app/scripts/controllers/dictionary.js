@@ -2,7 +2,7 @@
 
 
 angular.module('duvsCryApp')
-  .controller('DictionaryCtrl', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
+  .controller('DictionaryCtrl', ['$scope', 'localStorageService', '$routeParams', '$route', '$location', 'QuizQuestions', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
     $scope.navPage =  'dictionary';
 
     $scope.questions = QuizQuestions;
@@ -19,4 +19,4 @@ angular.module('duvsCryApp')
     };
     $scope.bootstrap();
 
-  });
+  }]);

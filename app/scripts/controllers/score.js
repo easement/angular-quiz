@@ -2,7 +2,7 @@
 
 
 angular.module('duvsCryApp')
-  .controller('ScoreCtrl', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
+  .controller('ScoreCtrl', ['$scope', 'localStorageService', '$routeParams', '$route', '$location', 'QuizQuestions', function ($scope, localStorageService, $routeParams, $route, $location, QuizQuestions) {
 
     $scope.questions = QuizQuestions;
 
@@ -131,4 +131,4 @@ angular.module('duvsCryApp')
     };
     $scope.bootstrap();
 
-  });
+  }]);
