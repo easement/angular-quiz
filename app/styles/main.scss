@@ -41,10 +41,7 @@ body {
 }
 
 .header .tapjoy {
-    color: red;
-    font-style: italic;
-    font-size: 42px;
-    font-weight: bold;
+    width: 100px;
 }
 
 .header .disabled-link {
@@ -119,17 +116,17 @@ form .submit { margin: 0; }
 .jumbotron .answerKey .glyphicon-remove { color: red;          font-size: 18px;     }
 .jumbotron .answerKey .glyphicon-ok     { color: green;        font-size: 18px;     }
 
-.jumbotron .answerKey .hand { 
-    color:      orange; 
-    font-size:  18px; 
-    text-align: right; 
+.jumbotron .answerKey .hand {
+    color:      orange;
+    font-size:  18px;
+    text-align: right;
 }
 
 .jumbotron .answerKey .correct-answer-col { color: green; }
 
-.jumbotron .answerKey .incorrect-answer { 
-    color:      red;   
-    font-style: italic; 
+.jumbotron .answerKey .incorrect-answer {
+    color:      red;
+    font-style: italic;
 }
 
 .jumbotron .score-btns { margin-top: 30px; }

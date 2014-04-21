@@ -12,32 +12,37 @@ angular.module('duvsCryApp')
       $scope.userAnswers   = localStorageService.get('userAnswers') || [];
       $scope.currentAnswer = '';
       $scope.questions     = QuizQuestions;
+      $scope.previouslyAnswered = $scope.userAnswers[$scope.questionId] || '';
     };
 
     $scope.bootstrap();
 
     $scope.next = function (){
       $scope.logAnswer();
-      // Todo out of bounds
-      var nextQuestion = $scope.questionId + 1;
+      var nextQuestion = parseInt($scope.questionId) + 1;
 
       if (nextQuestion < $scope.questions.length) {
-        $scope.questionId    = nextQuestion;
-        $scope.currentAnswer = '';
-        jQuery('.progress-bar').progressbar({display_text: 'fill'});
-        jQuery('.submit button.btn').blur();
+        //$scope.questionId    = nextQuestion;
+        $location.path('/quiz/' + nextQuestion);
       } else {
         $location.path('/score');
       }
     };
 
     $scope.getPercentage = function () {
-      return ((($scope.questionId + 1) / $scope.questions.length) * 100).toFixed(2);
+      console.log(((($scope.questionId) / $scope.questions.length) * 100).toFixed(2));
+      $scope.currentProgress();
+      return ((($scope.questionId) / $scope.questions.length) * 100).toFixed(2);
     };
 
     $scope.logAnswer = function() {
       $scope.userAnswers[$scope.questionId] = $scope.currentAnswer;
       localStorageService.set('userAnswers', JSON.stringify($scope.userAnswers));
+    };
+
+    $scope.currentProgress = function() {
+      jQuery('.progress-bar').progressbar({display_text: 'fill'});
+      jQuery('.submit button.btn').blur();
     };
 
   }]);
