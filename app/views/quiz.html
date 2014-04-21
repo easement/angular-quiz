@@ -16,7 +16,12 @@
         <li ng-repeat="(label, answer) in questions[questionId].answers"><input type="radio" name="currentAnswer" value="{{label}}" ng-model="$parent.currentAnswer" ng-checked="$parent.previouslyAnswered == label"> {{answer}}</li>
     </ol>
     <!-- ng-disabled="currentAnswer.length == 0" -->
-    <p class="submit"><button class="btn btn-lg btn-primary" ng-click="next()" ng-disabled="false">Submit</button></p>
+    <div class="score-btns">
+      <button class="btn btn-lg btn-primary" ng-click="prev()" ng-disabled="false"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+      <button class="btn btn-lg btn-primary" ng-click="next()" ng-disabled="false">Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
+    <p class="submit"></p>
+    <p class="submit"></p>
   </form>
 </div>
 

@@ -29,6 +29,18 @@ angular.module('duvsCryApp')
       }
     };
 
+
+    $scope.prev = function (){
+      $scope.logAnswer();
+      var prevQuestion = parseInt($scope.questionId) - 1;
+
+      if (prevQuestion < 0) {
+        prevQuestion = 0;
+      }
+      $location.path('/quiz/' + prevQuestion);
+
+    };
+
     $scope.getPercentage = function () {
       console.log(((($scope.questionId) / $scope.questions.length) * 100).toFixed(2));
       $scope.currentProgress();
